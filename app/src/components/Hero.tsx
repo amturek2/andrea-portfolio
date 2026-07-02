@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, type TargetAndTransition } from "framer-motion";
 import { bowlby, jetBrainsMono } from "../lib/fonts";
 import { resumePath } from "../data/site";
 import { SectionTransition } from "./SectionTransition";
 
-const slowFloat = {
+const slowFloat: TargetAndTransition = {
   y: [0, -2, 0],
   rotate: [0, -2, 0],
   transition: {

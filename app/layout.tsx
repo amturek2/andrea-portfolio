@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Andrea Turek",
   description:
     "Software engineer interested in math, data, optimization, and creative systems.",
+  icons: {
+    icon: "/starlogo.png",
+  },
 };
 
 export default function RootLayout({

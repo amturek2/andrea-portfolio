@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { type FormEvent, type HTMLInputTypeAttribute, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { socialLinks } from "../data/site";
@@ -10,7 +10,7 @@ export function Contact() {
   const [status, setStatus] = useState("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
-  async function handleSubmit(event) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("loading");
     setErrorMessage("");
@@ -291,7 +291,35 @@ export function Contact() {
   );
 }
 
-function ContactInput({ label, name, placeholder, type = "text" }) {
+type ContactInputProps = {
+  label: string;
+  name: string;
+  placeholder: string;
+  type?: HTMLInputTypeAttribute;
+};
+
+type FooterLinkProps = {
+  href: string;
+  label: string;
+  iconSrc: string;
+  iconAlt: string;
+};
+
+type ContactLinkProps = {
+  iconSrc: string;
+  iconAlt: string;
+  label: string;
+  value: string;
+  href: string;
+  color: string;
+};
+
+function ContactInput({
+  label,
+  name,
+  placeholder,
+  type = "text",
+}: ContactInputProps) {
   return (
     <div>
       <label
@@ -313,7 +341,7 @@ function ContactInput({ label, name, placeholder, type = "text" }) {
   );
 }
 
-function FooterLink({ href, label, iconSrc, iconAlt }) {
+function FooterLink({ href, label, iconSrc, iconAlt }: FooterLinkProps) {
   return (
     <a
       href={href}
@@ -327,7 +355,14 @@ function FooterLink({ href, label, iconSrc, iconAlt }) {
   );
 }
 
-function ContactLink({ iconSrc, iconAlt, label, value, href, color }) {
+function ContactLink({
+  iconSrc,
+  iconAlt,
+  label,
+  value,
+  href,
+  color,
+}: ContactLinkProps) {
   return (
     <a
       href={href}

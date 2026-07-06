@@ -25,8 +25,8 @@ export const projects: Project[] = [
     description:
       "A robotics research platform for testing how path-planning algorithms scale across different environments and robot team sizes.",
     previewImage: "/project_pictures/mapf-cartoon.png",
-    detailImageOne: "/project_pictures/robot_detail1.png",
-    detailImageTwo: "/project_pictures/robot_detail2.png",
+    detailImageOne: "/project_pictures/MAPF-pipeline.png",
+    detailImageTwo: "/project_pictures/MAPF-maps.png",
     accentColor: "#CFE1FF",
     tags: [
       "Python",
@@ -39,10 +39,13 @@ export const projects: Project[] = [
       "Benchmarking",
       "Performance Analysis",
     ],
-
-    detailsFormat: "paragraph",
-    detailsParagraph:
-      "A robotics research platform for testing how different multi-agent pathfinding algorithms perform  when many robots need to move through the same space without collisions as environments become more crowded, constrained, or complex. The system runs planning methods across open, cluttered, and narrow-passage maps with different robot counts, then compares runtime, makespan, solution cost, scalability, and conflict behavior. I helped build the benchmarking pipeline so the results can eventually support an adaptive ML framework that chooses the best planning strategy for a given environment.",
+    detailsFormat: "bullets",
+    bullets: [
+      "Built a **benchmarking pipeline** to evaluate multi-agent pathfinding algorithms (**A\\***, **CBS**, **MA-CBS**) across open, cluttered, and narrow-passage environments with varying robot team sizes.",
+      "Measured **runtime**, **makespan**, **solution cost**, and **conflict behavior** to characterize how each planner scales as environments grow more crowded or constrained.",
+      "Designed the platform to feed results into a future **adaptive ML framework** that selects the best planning strategy for a given environment on the fly.",
+      "Implemented core planning and evaluation logic in **Python** and **C++**, working within Parasol Lab's research codebase under Dr. Nancy Amato.",
+    ],
     links: [
       { label: "GitHub", href: "https://github.com/Kcruz28/Parasol-PPL-2.0" },
       { label: "Poster", href: "/documents/Turek_MAPF_Poster.pdf" },
@@ -54,6 +57,7 @@ export const projects: Project[] = [
     description:
       "An interactive aviation storytelling platform that turns raw flight-track data into a 3D simulation with animated aircraft movement, route playback, and geospatial context.",
     previewImage: "/project_pictures/airplane_world.png",
+    detailImageTwo: "/project_pictures/3js-demo.png",
     accentColor: "#B8C7F4",
     tags: [
       "JavaScript",
@@ -64,16 +68,15 @@ export const projects: Project[] = [
       "Data Visualization",
       "Geospatial Data",
     ],
+    detailsFormat: "bullets",
     bullets: [
-      "Built a 3D flight playback experience where users can scrub through a route, follow the aircraft camera, and visualize altitude, velocity, and geographic movement.",
-      "Processed raw flight JSON into normalized simulation state, including timestamps, aircraft metadata, coordinates, and route samples.",
-      "Worked directly with an aviation media client through weekly meetings to align features with story-driven business goals.",
-      "Led and supported teammates across Git, JavaScript, data processing, and technical communication throughout the consulting project.",
+      "Built a **3D flight playback experience** using **Three.js** and **WebGL**, letting users scrub through a route, follow the aircraft camera, and track altitude, velocity, and geographic movement in real time.",
+      "Processed raw flight-track **JSON** into normalized simulation state — timestamps, aircraft metadata, coordinates, and route samples — to drive smooth, accurate playback.",
+      "Integrated **Mapbox** and **Cesium** for geospatial context, grounding the 3D simulation in real-world terrain and location data.",
+      "Partnered directly with an **aviation media client** through weekly meetings to align technical features with story-driven business goals.",
+      "Led and supported teammates across **Git**, **JavaScript**, data processing, and client communication as part of a CUBE Consulting engagement.",
     ],
-    links: [
-      { label: "GitHub", href: "#" },
-      { label: "Demo", href: "#" },
-    ],
+    links: [],
   },
   {
     title: "Big Ten Fight Song Data Visualization",
@@ -81,8 +84,8 @@ export const projects: Project[] = [
     description:
       "A competition-winning data visualization project that analyzes Big Ten fight song lyrics, school spirit, attendance, and football outcomes through an interactive React and D3 interface.",
     previewImage: "/project_pictures/fight-song.png",
-    detailImageOne: "/project_pictures/music.png",
-    detailImageTwo: "/project_pictures/music.png",
+    detailImageOne: "/project_pictures/big10-rhetoric.png",
+    detailImageTwo: "/project_pictures/big10-map.png",
     accentColor: "#EADCFB",
     tags: [
       "Python",
@@ -101,8 +104,18 @@ export const projects: Project[] = [
       "Designed an interactive React/D3 interface with maps, filters, scatterplots, score explanations, and conference-level comparisons.",
     ],
     links: [
-      { label: "Live Site", href: "#" },
-      { label: "GitHub", href: "#" },
+      {
+        label: "Live Site",
+        href: "https://amturek2.github.io/Big-10-Song-Data-Viz/",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/amturek2/Big-10-Song-Data-Viz",
+      },
+      {
+        label: "Big 10 Competition Page",
+        href: "    https://publish.illinois.edu/lovedataweek/love-data-week-2026-data-viz-competition/",
+      },
     ],
   },
   {
@@ -111,8 +124,8 @@ export const projects: Project[] = [
     description:
       "A genomics data systems project that compresses large sequencing files into Bloom-filter representations and classifies tumor versus normal tissue using similarity-based methods.",
     previewImage: "/project_pictures/gene_data.png",
-    detailImageOne: "/project_pictures/genomics.png",
-    detailImageTwo: "/project_pictures/genomics.png",
+    detailImageOne: "/project_pictures/gene-table.png",
+    detailImageTwo: "/project_pictures/gene-bloom.png",
     accentColor: "#C7C4F6",
     tags: [
       "Python",
@@ -125,14 +138,14 @@ export const projects: Project[] = [
       "Classification",
     ],
     bullets: [
-      "Compressed hundreds of GB of genomic FASTA/FASTQ data into compact Bloom-filter representations for efficient tissue comparison.",
-      "Implemented k-mer extraction, singleton-noise filtering, hash-function testing, and approximate set-similarity scoring.",
-      "Built a Jaccard-similarity classifier to distinguish tumor tissue from normal tissue using compressed genomic fingerprints.",
-      "Presented the research at two undergraduate conferences, explaining probabilistic data structures and cancer-signal detection to mixed audiences.",
+      "Compressed hundreds of **GB of genomic FASTA/FASTQ data** into compact **Bloom-filter** representations, enabling fast, memory-efficient tissue comparison at scale.",
+      "Implemented **k-mer extraction**, singleton-noise filtering, and hash-function testing (**MurmurHash3**, **MinHash**) to build robust approximate set-similarity scoring.",
+      "Built a **Jaccard-similarity classifier** to distinguish tumor tissue from normal tissue using compressed genomic fingerprints, rather than full raw sequences.",
+      "Presented the research at **two undergraduate conferences**, translating probabilistic data structures and cancer-signal detection for mixed technical and non-technical audiences.",
     ],
     links: [
-      { label: "Poster", href: "#" },
-      { label: "GitHub", href: "#" },
+      { label: "Poster", href: "/documents/Spring25PosterCSSTARS.pdf" },
+      { label: "GitHub", href: "https://github.com/amturek2/spr25_stars" },
     ],
   },
   {
@@ -141,8 +154,8 @@ export const projects: Project[] = [
     description:
       "A cross-platform queue management app that lets customers join virtual lines while businesses manage live waitlists, service flow, and estimated wait times.",
     previewImage: "/project_pictures/skipit.png",
-    detailImageOne: "/project_pictures/skipit.png",
-    detailImageTwo: "/project_pictures/skipit.png",
+    detailImageOne: "/project_pictures/skipit-app.png",
+    detailImageTwo: "/project_pictures/skipit-architecture.png",
     accentColor: "#D9C8F5",
     tags: [
       "Flutter",
@@ -154,14 +167,16 @@ export const projects: Project[] = [
       "Real-Time Systems",
     ],
     bullets: [
-      "Built frontend flows that subscribe to Firestore streams and update queue position, wait time, favorites, and business dashboards in real time.",
-      "Connected the Flutter client to Firebase Auth, Cloud Firestore, Cloud Functions, and role-based routing.",
-      "Handled asynchronous loading, error states, live queue updates, and user-specific membership records.",
-      "Designed mascot and branding elements while contributing to product usability, architecture planning, and frontend-backend integration.",
+      "Built frontend flows using **Flutter** and **Dart** that subscribe to **Firestore streams**, updating queue position, wait time, favorites, and business dashboards in real time.",
+      "Connected the client to **Firebase Auth**, **Cloud Firestore**, and **Cloud Functions**, with role-based routing for customers versus businesses.",
+      "Handled asynchronous loading, error states, live queue updates, and user-specific membership records across the app.",
+      "Designed **mascot and branding elements** while contributing to product usability, system architecture, and frontend-backend integration.",
     ],
     links: [
-      { label: "GitHub", href: "#" },
-      { label: "Demo", href: "#" },
+      {
+        label: "GitHub",
+        href: "https://github.com/CS222-UIUC/fa25-fa25-team102",
+      },
     ],
   },
   {
@@ -170,8 +185,8 @@ export const projects: Project[] = [
     description:
       "A full-stack recommendation platform that connects a React frontend to a Flask and scikit-learn backend for personalized song suggestions.",
     previewImage: "/project_pictures/music-recommendation.png",
-    detailImageOne: "/project_pictures/music-recommender.png",
-    detailImageTwo: "/project_pictures/music-recommender.png",
+    detailImageOne: "/project_pictures/music1.png",
+    detailImageTwo: "/project_pictures/music2.png",
     accentColor: "#9BB9F2",
     tags: [
       "React",
@@ -184,14 +199,16 @@ export const projects: Project[] = [
       "NumPy",
     ],
     bullets: [
-      "Built the frontend and backend integration for a music recommendation app that turns user preferences into ranked song suggestions.",
-      "Collaborated on a scikit-learn recommendation pipeline using clustering, feature scaling, categorical encoding, and cosine similarity.",
+      "Built the **React** frontend and **Flask** backend integration for a music recommendation app that turns user preferences into ranked song suggestions.",
+      "Collaborated on a **scikit-learn** recommendation pipeline using **K-Means clustering**, feature scaling, categorical encoding, and **cosine similarity**.",
       "Designed user flows, form validation, API request/response contracts, and recommendation result displays.",
-      "Translated machine learning outputs into an interface that felt understandable and useful to non-technical users.",
+      "Translated **machine learning** outputs into an interface that felt understandable and useful to non-technical users.",
     ],
     links: [
-      { label: "GitHub", href: "#" },
-      { label: "Slides", href: "#" },
+      {
+        label: "GitHub",
+        href: "https://github.com/CS196Illinois/FA24-Group29",
+      },
     ],
   },
 ];

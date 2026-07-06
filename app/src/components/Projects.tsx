@@ -161,7 +161,7 @@ export function Projects() {
                 {detailImages.map((image, index) => (
                   <div
                     key={`${selectedProject.title}-${index}`}
-                    className="relative h-64 overflow-hidden rounded-xl border-2 border-[#202020] bg-white sm:h-72 lg:h-80"
+                    className="relative h-64 overflow-hidden rounded-xl border-2 border-[#202020] bg-white p-4 sm:h-72 sm:p-5 lg:h-80"
                   >
                     <Image
                       src={image}
@@ -174,32 +174,34 @@ export function Projects() {
                             ? "(max-width: 767px) 100vw, (max-width: 1023px) 100vw, 60vw"
                             : "(max-width: 767px) 100vw, (max-width: 1023px) 100vw, 36vw"
                       }
-                      className="object-cover"
+                      className="object-contain object-center p-2"
                     />
                   </div>
                 ))}
               </div>
             )}
 
-            <div className="mt-8 border-t border-[#202020]/20 pt-6">
-              <h4
-                className={`${patrickHand.className} mb-4 text-3xl text-[#ff5b2e]`}
-              >
-                Links
-              </h4>
+            {selectedProject.links.length > 0 && (
+              <div className="mt-8 border-t border-[#202020]/20 pt-6">
+                <h4
+                  className={`${patrickHand.className} mb-4 text-3xl text-[#ff5b2e]`}
+                >
+                  Links
+                </h4>
 
-              <div className="flex flex-wrap gap-x-8 gap-y-4">
-                {selectedProject.links.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className={`${jetBrainsMono.className} text-base font-bold text-[#2867d8] underline decoration-2 underline-offset-4 transition hover:text-[#ff5b2e]`}
-                  >
-                    {link.label}
-                  </a>
-                ))}
+                <div className="flex flex-wrap gap-x-8 gap-y-4">
+                  {selectedProject.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className={`${jetBrainsMono.className} text-base font-bold text-[#2867d8] underline decoration-2 underline-offset-4 transition hover:text-[#ff5b2e]`}
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </motion.article>
       </motion.div>
@@ -278,13 +280,13 @@ export function Projects() {
                     className="relative block h-44 w-full shrink-0 overflow-hidden border-b-2 border-[#202020]"
                     style={{ backgroundColor: project.accentColor }}
                   >
-                    <div className="absolute inset-x-0.5 inset-y-0.00 sm:inset-x-0.5 sm:inset-y-0">
+                    <div className="absolute inset-3 sm:inset-4">
                       <Image
                         src={project.previewImage}
                         alt={`${project.title} illustration`}
                         fill
                         sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, (max-width: 1535px) 33vw, 25vw"
-                        className="scale-110 object-contain object-top transition duration-300 group-hover:scale-[1.14]"
+                        className="object-contain object-center transition duration-300 group-hover:scale-105"
                       />
                     </div>
                   </div>

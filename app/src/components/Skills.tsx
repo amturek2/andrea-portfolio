@@ -29,6 +29,7 @@ const skillCards: SkillCard[] = [
       "Dart",
       "HTML",
       "CSS",
+      "C"
     ],
   },
   {

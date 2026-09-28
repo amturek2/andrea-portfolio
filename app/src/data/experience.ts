@@ -14,9 +14,27 @@ export type ExperienceItem = {
 
 export const experiences: ExperienceItem[] = [
   {
+  company: "University of Illinois Urbana-Champaign",
+  role: "CS 374 Course Assistant",
+  dateRange: "Aug 2026 – Present",
+  skills: [
+    "Algorithms",
+    "Theory of Computation",
+    "Proof Writing",
+    "Teaching",
+    "Leadership"
+  ],
+  bullets: [
+    "Supporting students in **CS 374: Introduction to Algorithms & Models of Computation** through office hours, lab sections, and one-on-one problem solving.",
+    "Teaching core topics including **dynamic programming, graph algorithms, automata, regular languages, reductions, and NP-completeness**.",
+    "Grading and providing detailed feedback on **algorithmic and proof-based assignments**, helping students strengthen mathematical reasoning and rigorous technical communication.",
+  ],
+},
+  ,
+  {
     company: "Octus Intelligence",
     role: "Quantitative Developer Intern",
-    dateRange: "Dec 2025 – Present",
+    dateRange: "Dec 2025 – Aug 2026",
     skills: [
       "Java",
       "Spring Boot",

@@ -30,7 +30,6 @@ export const experiences: ExperienceItem[] = [
     "Grading and providing detailed feedback on **algorithmic and proof-based assignments**, helping students strengthen mathematical reasoning and rigorous technical communication.",
   ],
 },
-  ,
   {
     company: "Octus Intelligence",
     role: "Quantitative Developer Intern",
